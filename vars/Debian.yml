@@ -1,3 +1,0 @@
----
-htpasswd_deps_pkgs:
-  - apache2-utils
