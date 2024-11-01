@@ -1,0 +1,3 @@
+---
+htpasswd_deps_pkgs:
+  - httpd-utils

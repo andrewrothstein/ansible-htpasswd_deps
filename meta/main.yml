@@ -1,22 +1,31 @@
-dependencies:
-- role: andrewrothstein.epel
-  version: v1.0.8
+---
 galaxy_info:
   author: Andrew Rothstein
   company: BlackRock
   description: dependencies for the Ansible htpasswd module
   galaxy_tags:
-  - htpasswd
-  license:
-  - MIT
-  min_ansible_version: 2.0
+    - htpasswd
+  license: MIT
+  min_ansible_version: '2.0'
+  namespace: andrewrothstein
   platforms:
-  - name: EL
-    versions:
-    - all
-  - name: Fedora
-    versions:
-    - all
-  - name: Ubuntu
-    versions:
-    - all
+    - name: ArchLinux
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - bookworm
+        - bullseye
+    - name: EL
+      versions:
+        - '8'
+        - '9'
+    - name: Fedora
+      versions:
+        - '39'
+        - '40'
+    - name: Ubuntu
+      versions:
+        - jammy
+        - noble
+  role_name: htpasswd_deps

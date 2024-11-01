@@ -1,4 +1,14 @@
 ---
-- hosts: all
-  roles:
-    - role: '{{playbook_dir}}'
+- name: Installing and testing htpasswd
+  hosts: all
+  tasks:
+    - name: Installing htpasswd
+      ansible.builtin.include_role:
+        name: '{{ playbook_dir }}'
+    - name: Executing 'htpasswd -nb username password'
+      ansible.builtin.command: htpasswd -nb username password
+      changed_when: false
+      register: htpasswd_test_output
+    - name: Output of 'htpasswd -nb username password'
+      ansible.builtin.debug:
+        msg: '{{ htpasswd_test_output.stdout }}'
